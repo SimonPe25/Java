@@ -4,9 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class homework3 {
-
-
-
     public static void main(String[] args) {
         Random randFirst = new Random();
         Random randTwo = new Random();
@@ -14,28 +11,32 @@ public class homework3 {
         int b = 4;
         int x  =  a + randFirst.nextInt(b - a + 1);
         int y  =  a + randTwo.nextInt(b - a + 1);
-        //int[][] arrUser = {{x},{y}};
         Scanner in = new Scanner(System.in);
         System.out.print("Input name: ");
         String name = in.nextLine();
-
         System.out.println("Hello my friend " + name);
         String[][] field = initField();
         while (true) {
             System.out.println("Let the game begin! Please enter");
             printField(field);
-            System.out.println(name + ", this number is a line of matrix");
             int numX = in.nextInt();
-            System.out.println(name + ", this number is a column of matrix");
             int numY = in.nextInt();
-            field[numX][numY] ="*";
-            field[x][y] = "?";
-
-            if (Objects.equals(field[x][y], field[numX][numY])) {
-                System.out.println(name + " You have won!");
-                break;
-               }
+            try {
+                if (numX > 5 || numX < 1 || numY > 5 || numY < 1) {
+                    System.out.println("You must enter a value between 1-5: ");
+                } else {
+                    field[numX-1][numY-1] ="*";
+                    field[x][y] = "?";
+                    if (Objects.equals(field[x][y], field[numX-1][numY-1])) {
+                        System.out.println(name + " You have won!");
+                        break;
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.err.println("\n" + "Wrong string format!" + e);
+                System.out.println(name + " please, try again only numbers.");
             }
+          }
         }
         public static String[][] initField() {
             String[][] field = new String[5][5];
