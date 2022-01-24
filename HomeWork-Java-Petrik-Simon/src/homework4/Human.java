@@ -90,9 +90,22 @@ import java.util.Objects;
         this.schedule = schedule;
     }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Human human = (Human) o;
+            return year == human.year && Objects.equals(name, human.name) && Objects.equals(surname, human.surname) && Objects.equals(family, human.family) && Arrays.equals(schedule, human.schedule);
+        }
 
+        @Override
+        public int hashCode() {
+            int result = Objects.hash(name, surname, year, family);
+            result = 31 * result + Arrays.hashCode(schedule);
+            return result;
+        }
 
-    @Override
+        @Override
     public String toString() {
         return "Human{" +
                 "name='" + name + '\'' +
