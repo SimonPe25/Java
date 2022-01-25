@@ -26,6 +26,8 @@ public class Main {
         Family family = new Family(mother, father, new Human[]{sister});
         family.setPet(pet);
         family.addChildren(brother);
+        family.addChildren(sister);
+        family.addChildren(elderSister);
         family.deleteChild(2);
         System.out.println("***");
         System.out.println("new Famaly " +  family);

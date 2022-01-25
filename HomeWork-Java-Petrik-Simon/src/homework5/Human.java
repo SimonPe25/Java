@@ -1,16 +1,16 @@
-package homework4;
+package homework5;
 
 import java.util.Arrays;
 import java.util.Objects;
     //конструктор, описывающий все поля
-    public class Human {
+
+public class Human {
     private String name;
     private String surname;
     private int year;
     private int iq;
     private Family family;
     private String[][] schedule = new String[2][2];
-
 
     public static int countFamily  = 0 ;
     //конструктор, описывающий имя, фамилию и год рождения
@@ -22,15 +22,12 @@ import java.util.Objects;
     }
 
     public Human(String name, String surname, int year, int iq) {
-
         this(name, surname, year);
         this.iq = iq;
 
     }
     //пустой конструктор
     public Human() {}
-
-
 
     public void greetPet(){System.out.println("Привет, " + family.getPet().getNickname());}
     public String gettingAnswer(){
@@ -104,6 +101,28 @@ import java.util.Objects;
             int result = Objects.hash(name, surname, year, family);
             result = 31 * result + Arrays.hashCode(schedule);
             return result;
+        }
+
+        public static int getCountFamily() {
+            return countFamily;
+        }
+
+        static int deleteCount = 0;
+
+        @Override
+        protected void finalize() {
+            deleteCount++;
+            System.out.println("Удаляемый объектв классе Human в методе finalize(): " + this + " " + deleteCount + " - раз");
+        }
+
+        enum DayOfWeek {
+            MONDAY,
+            TUESDAY,
+            WEDNESDAY,
+            THURSDAY,
+            FRIDAY,
+            SATURDAY,
+            SUNDAY
         }
 
         @Override
