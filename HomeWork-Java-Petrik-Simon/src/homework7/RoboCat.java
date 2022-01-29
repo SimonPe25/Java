@@ -1,15 +1,14 @@
-package homework6;
-
-import homework6.Pet;
+package homework7;
 
 import java.util.Arrays;
+import java.util.Set;
 
 public class RoboCat extends Pet {
   String ROBOCAT = String.valueOf(Species.ROBOCAT);
 
     public RoboCat() {};
 
-    public RoboCat(String nickname, int age, int trickLevel, String[] habits) {
+    public RoboCat(String nickname, int age, int trickLevel, Set<String> habits) {
         super( nickname, age, trickLevel, habits);
     }
 
@@ -30,7 +29,7 @@ public class RoboCat extends Pet {
                 ", nickname='" + getNickname() + '\'' +
                 ", age=" + getAge() +
                 ", trickLevel=" + getTrickLevel() +
-                ", habits=" + Arrays.toString(getHabits()) +
+                ", habits=" + getHabits() +
                 "}";
     }
 }

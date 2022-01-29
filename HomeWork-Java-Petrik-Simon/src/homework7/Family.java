@@ -1,18 +1,27 @@
-package homework6;
+package homework7;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class Family {
     private Human mother;
     private Human father;
     private Human[] childrens;
-    private Pet pet;
+    //private Pet pet;
+    private Set<String> pet;
 
-    public Family(Human mother, Human father, Human[] childrens) {
+    public Family(Human mother, Human father, List<Human> childrens, Set<String> pet) {
         this.mother = mother;
         this.father = father;
-        this.childrens = childrens;
+        this.childrens = childrens.toArray(new Human[0]);
+        this.pet = pet;
+    }
+    public Family(Human mother, Human father, List<Human> childrens) {
+        this.mother = mother;
+        this.father = father;
+        this.childrens = childrens.toArray(new Human[0]);
     }
 
     public void addChildren(Human children){
@@ -55,11 +64,11 @@ public class Family {
         this.childrens = childrens;
     }
 
-    public Pet getPet() {
+    public Set<String> getPet() {
         return pet;
     }
 
-    public void setPet(Pet pet) {
+    public void setPet(Set<String> pet) {
         this.pet = pet;
     }
 

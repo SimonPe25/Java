@@ -1,8 +1,9 @@
-package homework6;
+package homework7;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +11,7 @@ class FamilyTest {
 
     @Test
     void addChildren() {
-        Family family = new Family(null,null, new Human[]{});
+        Family family = new Family(null,null, List.of(new Human[]{}));
         Human sister = new Human("Arina", "Averina", 18,98);
         family.addChildren(sister);
         Human[] childrens = family.getChildrens(sister);
@@ -22,7 +23,7 @@ class FamilyTest {
     void deleteChild() {
         Human sister = new Human("Arina", "Averina", 18,98);
         Human brother = new Human("Anatoliy", "Averin", 25, 95);
-        Family family = new Family(null, null, new Human[]{sister,brother});
+        Family family = new Family(null, null, List.of(new Human[]{sister, brother}));
         Human[] childrens = family.getChildrens(sister);
 
         //проверка то ребенок действительно удаляется из массива children  (если передать объект, еквивалентый хотябы одному элементу массива)

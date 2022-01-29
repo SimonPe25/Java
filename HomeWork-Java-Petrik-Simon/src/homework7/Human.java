@@ -1,7 +1,8 @@
-package homework6;
+package homework7;
 
-import java.util.Arrays;
-import java.util.Objects;
+
+import java.util.Map;
+
     //конструктор, описывающий все поля
 
 public class Human {
@@ -10,7 +11,16 @@ public class Human {
     private int year;
     private int iq;
     private Family family;
-    private String[][] schedule = new String[2][2];
+    private Map <String, String> schedule;
+
+    public Human(String name, String surname, int year, int iq, Map <String, String> schedule) {
+        countFamily++;
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+        this.schedule = schedule;
+    }
 
     public static int countFamily  = 0 ;
     //конструктор, описывающий имя, фамилию и год рождения
@@ -28,9 +38,10 @@ public class Human {
     }
     //пустой конструктор
     public Human() {}
-   ;
+
 
     public void greetPet(){System.out.println("Привет, " + family.getPet().getNickname());}
+
     public String gettingAnswer(){
         return (family.getPet().getTrickLevel() >= 50) ? " хитрый!" : "не хитрый!";
      }
@@ -81,28 +92,16 @@ public class Human {
         this.family = family;
     }
 
-    public String[][] getSchedule() {
+    public Map<String, String> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(String[][] schedule) {
+    public void setSchedule(Map<String, String> schedule) {
         this.schedule = schedule;
     }
 
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Human human = (Human) o;
-            return year == human.year && Objects.equals(name, human.name) && Objects.equals(surname, human.surname) && Objects.equals(family, human.family) && Arrays.equals(schedule, human.schedule);
-        }
 
-        @Override
-        public int hashCode() {
-            int result = Objects.hash(name, surname, year, family);
-            result = 31 * result + Arrays.hashCode(schedule);
-            return result;
-        }
+
 
         public static int getCountFamily() {
             return countFamily;
@@ -133,7 +132,7 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", schedule= " + Arrays.deepToString(schedule) +
+                ", schedule= " + schedule +
 //                ", mother=" + (mother != null ? mother.getName() + " " + mother.getSurname() : "") +
 //                ", father=" + (father != null ? father.getName() + " " + father.getSurname() : "") +
 //                ", pet=" + pet +

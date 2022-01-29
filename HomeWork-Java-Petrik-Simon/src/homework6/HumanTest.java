@@ -2,7 +2,7 @@ package homework6;
 
 import org.junit.jupiter.api.Test;
 
-import static homework5.Human.countFamily;
+import static homework6.Human.countFamily;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HumanTest {

@@ -1,8 +1,8 @@
-package homework6;
+package homework7;
 
 import org.junit.jupiter.api.Test;
 
-import static homework5.Human.countFamily;
+import static homework7.Human.countFamily;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HumanTest {

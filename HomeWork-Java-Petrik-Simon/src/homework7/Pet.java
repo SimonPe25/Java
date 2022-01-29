@@ -1,20 +1,21 @@
-package homework6;
+package homework7;
 
 import java.util.Arrays;
+import java.util.Set;
 
 
 public abstract class Pet {
     private String nickname;
     private int age;
     private int trickLevel;
-    private  String[] habits;
+    private  Set<String> habits;
 
     //конструктор, описывающий вид животного и его кличку
     public Pet(String nickname) {
         this.nickname = nickname;
     }
     //конструктор, описывающий все поля животного
-    public Pet(String nickname, int age, int trickLevel, String[] habits) {
+    public Pet(String nickname, int age, int trickLevel, Set<String> habits) {
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
@@ -22,8 +23,9 @@ public abstract class Pet {
     }
     //пустой конструктор
     public Pet(){}
-    public Pet(String valueOf, String nickname, int age, int trickLevel, String[] habits) {
+    public Pet(String valueOf, String nickname, int age, int trickLevel, Set<String> habits) {
     }
+
 
     public void eat(){System.out.println("Я кушаю!");}
     public abstract void respond();
@@ -53,11 +55,11 @@ public abstract class Pet {
         return trickLevel;
     }
 
-    public String[] getHabits() {
+    public Set<String> getHabits() {
         return habits;
     }
 
-    public void setHabits(String[] habits) {
+    public void setHabits(Set<String> habits) {
         this.habits = habits;
     }
 
@@ -85,7 +87,7 @@ public abstract class Pet {
                 ", nickname='" + nickname + '\'' +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +
-                ", habits=" + Arrays.toString(habits) +
+                ", habits=" + habits +
                 '}';
     }
 }

@@ -1,15 +1,17 @@
-package homework6;
+package homework7;
 
 import java.util.Arrays;
+import java.util.Set;
 
 public class Fish extends Pet {
 
 
     public Fish() {};
 
-    public Fish(String nickname, int age, int trickLevel, String[] habits) {
-        super(String.valueOf(Species.FISH), nickname, age, trickLevel, habits);
+    public Fish(String nickname, int age, int trickLevel, Set<String> habits) {
+        super( nickname, age, trickLevel, habits);
     }
+
 
     @Override
     public void respond() {
@@ -28,7 +30,7 @@ public class Fish extends Pet {
                 ", nickname='" + getNickname() + '\'' +
                 ", age=" + getAge() +
                 ", trickLevel=" + getTrickLevel() +
-                ", habits=" + Arrays.toString(getHabits()) +
+                ", habits=" + getHabits() +
                 "}";
     }
 }

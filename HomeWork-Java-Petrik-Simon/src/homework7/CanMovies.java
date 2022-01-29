@@ -1,4 +1,4 @@
-package homework6;
+package homework7;
 
 public interface CanMovies {
     void foul();
