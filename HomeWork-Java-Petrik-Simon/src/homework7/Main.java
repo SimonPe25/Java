@@ -62,23 +62,6 @@ public class Main {
         childrensList.add(3,elderBrother);
         childrensList.add(4,smallSister);
 
-        //mother.setSchedule(schedule);
-        // father.setSchedule(scheduleFather);
-        //  sister.setSchedule(schedule);
-        //  brother.setSchedule(scheduleFather);
-
-        //  Family family = new Family(mother, father, childrensList, dog7);
-        //   family.setPet(pet);
-        //    family.addChildren(brother);
-        //  family.deleteChild(0);
-
-
-        //  pet.eat();
-        // pet.respond();
-        //pet.foul();
-        System.out.println("***");
-        //   System.out.println(pet);
-        //    System.out.println(getSpeciesNickname.getSpecies() + " " + getSpeciesNickname.getNickname());
         System.out.println("***");
         System.out.println("Количество человек в семье: " + countFamily);
         System.out.println("***");
@@ -109,9 +92,8 @@ public class Main {
         domesticCat.foul();
         Woman woman = new Woman();
         Man man = new Man();
-        woman.greetPet();
         woman.makeup();
-        man.greetPet();
+
 
         System.out.println("-----------------------------HOMEWORK_7 _----------------------------------");
 
@@ -144,9 +126,33 @@ public class Main {
         System.out.println("matherFamily2 - " + matherFamily2);
         System.out.println("fatherFamily2 - " + fatherFamily2);
 
+
+
+        //SEt PET
+        Set<String> petGroup = new HashSet<>();
+        Pet tuzik = new Dog("Tuzik", 10, 45,habitsDog);
+        Pet nemo = new Fish("Nemo", 1, 58, habitsFish);
+        Pet barsik = new RoboCat("Barsik", 5, 68,habitsRoboCat);
+        Pet pushok = new DomesticCat("Pushok", 6, 87, habitsDomesticCat);
+
+        tuzik.greetPet();
+        tuzik.respond();
+
+        petGroup.add(String.valueOf(tuzik));
+        petGroup.add(String.valueOf(nemo));
+        petGroup.add(String.valueOf(barsik));
+        petGroup.add(String.valueOf(pushok));
+
         // Новая семья с LIST + MAP + SET
-        Family korenevu = new Family(matherFamily2, fatherFamily2, childrensList);
-        System.out.println("Korenevu - " + korenevu);
+        Family pushkarev = new Family(matherFamily2, fatherFamily2, childrensList, petGroup);
+
+        System.out.println(petGroup);
+        System.out.println(pushkarev);
+
+
+
+
+
 
 
 

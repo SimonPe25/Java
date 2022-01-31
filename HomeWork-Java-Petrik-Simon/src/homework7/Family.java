@@ -9,7 +9,6 @@ public class Family {
     private Human mother;
     private Human father;
     private Human[] childrens;
-    //private Pet pet;
     private Set<String> pet;
 
     public Family(Human mother, Human father, List<Human> childrens, Set<String> pet) {

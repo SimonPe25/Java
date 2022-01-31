@@ -39,15 +39,6 @@ public class Human {
     //пустой конструктор
     public Human() {}
 
-
-    public void greetPet(){System.out.println("Привет, " + family.getPet().getNickname());}
-
-    public String gettingAnswer(){
-        return (family.getPet().getTrickLevel() >= 50) ? " хитрый!" : "не хитрый!";
-     }
-
-    public void describePet(){System.out.println("У меня есть " + Pet.Species.DOG + ", ему "+ getYear() + " лет, он " + gettingAnswer());}
-
     public String getName() {
         return name;
     }

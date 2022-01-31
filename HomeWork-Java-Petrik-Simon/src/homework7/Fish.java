@@ -12,7 +12,6 @@ public class Fish extends Pet {
         super( nickname, age, trickLevel, habits);
     }
 
-
     @Override
     public void respond() {
 

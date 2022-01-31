@@ -29,6 +29,11 @@ public abstract class Pet {
 
     public void eat(){System.out.println("Я кушаю!");}
     public abstract void respond();
+    public void greetPet(){System.out.println("Привет, " + getNickname());}
+    public String gettingAnswer(){
+        return (getTrickLevel() >= 50) ? " хитрый!" : "не хитрый!";
+    }
+    public void describePet(){System.out.println("У меня есть " + Pet.Species.DOG + ", ему "+ getAge() + " лет, он " + gettingAnswer());}
 
     public String getNickname() {
         return nickname;
