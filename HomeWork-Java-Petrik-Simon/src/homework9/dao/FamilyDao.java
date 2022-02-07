@@ -1,6 +1,6 @@
-package homework8.dao;
+package homework9.dao;
 
-import homework8.Family;
+import homework9.Family;
 
 public interface FamilyDao {
 

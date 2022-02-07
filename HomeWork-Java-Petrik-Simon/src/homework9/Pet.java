@@ -1,7 +1,6 @@
-package homework8;
+package homework9;
 
 import java.util.Set;
-import java.util.function.IntFunction;
 
 
 public abstract class Pet  {

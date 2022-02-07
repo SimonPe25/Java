@@ -1,15 +1,11 @@
-package homework8.controller;
+package homework9.controller;
 
-import homework8.Family;
-import homework8.Human;
-import homework8.Pet;
-import homework8.service.FamilyService;
+import homework9.Family;
+import homework9.Human;
+import homework9.Pet;
+import homework9.service.FamilyService;
 
-import java.security.SecureRandom;
-import java.util.Arrays;
 import java.util.List;
-
-import static homework8.Family.countFamily;
 
 public class FamilyController {
 
@@ -47,8 +43,8 @@ public class FamilyController {
     public void adoptChild(Family family, Human human){
         familyService.adoptChild(family,human);
     }
-    public void deleteAllChildrenOlderThen(int index){
-       familyService.deleteAllChildrenOlderThen(index);
+    public void deleteAllChildrenOlderThen(int age){
+       familyService.deleteAllChildrenOlderThen(age);
     }
     public void count(){familyService.count();}
     public void getFamilyById(int index){
@@ -57,9 +53,9 @@ public class FamilyController {
     public void getPets(int index){
         familyService.getPets(index);
     }
-    public void addPet(int index, Pet pet){
-       familyService.addPet(index, pet);
-        }
+//    public void addPet(int index, Pet pet){
+//       familyService.addPet(index, pet);
+//        }
 
 
 

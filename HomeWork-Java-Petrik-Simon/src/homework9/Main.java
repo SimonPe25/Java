@@ -1,15 +1,13 @@
-package homework8;
+package homework9;
 
-import homework8.controller.FamilyController;
-import homework8.dao.CollectionFamily;
-import homework8.service.FamilyService;
+import homework9.controller.FamilyController;
+import homework9.dao.CollectionFamily;
+import homework9.service.FamilyService;
 
 import java.util.*;
 
-import static homework8.Family.countHum;
-import static homework8.Human.DayOfWeek.*;
-import static homework8.Human.countHuman;
-import static homework8.Pet.Species.SHARK;
+import static homework9.Human.DayOfWeek.*;
+import static homework9.Human.countHuman;
 
 
 public class Main {
@@ -142,6 +140,8 @@ public class Main {
         System.out.println("matherFamily2 - " + matherFamily2);
         System.out.println("fatherFamily2 - " + fatherFamily2);
 
+
+
         //SEt PET
         Set<String> petGroup = new HashSet<>();
         Pet tuzik = new Dog("Tuzik", 10, 45,habitsDog);
@@ -196,16 +196,19 @@ public class Main {
         Human adoptedChild = new Human("Donald", "Tramp", 15);
         familyController.adoptChild(popov, adoptedChild);
         familyController.displayAllFamilies();
+       // familyController.deleteAllChildrenOlderThen(5);
         familyController.count();
         familyController.getFamilyById(2);
         familyController.getPets(1);
-        familyController.deleteAllChildrenOlderThen(17);
+        Pet shrark = new Fish("BUBA",3,25, habitsFish);
+        //familyController.addPet(0, shrark);
+        mother.getTime();
+        mother.describeAge();
         familyController.displayAllFamilies();
+        familyService.getFamiliesBiggerThan(0);
+        familyController.deleteAllChildrenOlderThen(20);
 
-        familyController.addPet(5, nemo);
-        familyController.displayAllFamilies();
-        familyController.addPet(5, tuzik);
-        familyController.displayAllFamilies();
+       // familyController.deleteAllChildrenOlderThen(10);
 
 
 

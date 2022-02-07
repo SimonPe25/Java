@@ -1,25 +1,44 @@
-package homework8;
+package homework9;
 
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.Map;
 
     //конструктор, описывающий все поля
 
 public class Human {
     private String name;
-
     public Human(String name) {
         this.name = name;
     }
-
     private String surname;
-    private int year;
+    private long year;
     private int iq;
     private Family family;
     private Map <String, String> schedule;
     public static int countHuman  = 0 ;
     private int people = 0;
 
+    Date moment = new Date(); // Задаем количество миллисекунд Unix-time с того-самого-момента
+   Date birthDate = new Date(1644064725740L);
+    public void getTime(){
+
+        System.out.println(birthDate);
+        System.out.println("Текущее время - " + moment.getTime());
+    }
+
+    public void describeAge(){
+        calculateTime(1644064725740L);
+    }
+
+    public static void calculateTime(long seconds) {
+        long sec = seconds % 60;
+        long minutes = seconds % 3600 / 60;
+        long hours = seconds % 86400 / 3600;
+        long days = seconds / 86400;
+        System.out.println("Day " + days + " Hour " + hours + " Minute " + minutes + " Seconds " + sec);
+    }
 
     public int getPeople() {
         return people++;
@@ -44,6 +63,7 @@ public class Human {
         this.surname = surname;
         this.year = year;
     }
+
 
     public Human(String name, String surname, int year, int iq) {
 
@@ -74,7 +94,7 @@ public class Human {
         this.surname = surname;
     }
 
-    public int getYear() {
+    public long getYear() {
         return year;
     }
 
