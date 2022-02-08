@@ -1,37 +1,33 @@
 package homework9;
 
 
-import java.time.Instant;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
     //конструктор, описывающий все поля
 
-public class Human {
+public class Human<oneYear> {
     private String name;
+
     public Human(String name) {
         this.name = name;
     }
+
     private String surname;
-    private long year;
+    private int year;
     private int iq;
     private Family family;
     private Map <String, String> schedule;
     public static int countHuman  = 0 ;
     private int people = 0;
+    private String birthDateAdoptedChild;
 
-    Date moment = new Date(); // Задаем количество миллисекунд Unix-time с того-самого-момента
-   Date birthDate = new Date(1644064725740L);
-    public void getTime(){
-
-        System.out.println(birthDate);
-        System.out.println("Текущее время - " + moment.getTime());
-    }
-
+    private long oneYear = 31556952L;
     public void describeAge(){
-        calculateTime(1644064725740L);
+        calculateTime(getYearInMilisec());
     }
-
     public static void calculateTime(long seconds) {
         long sec = seconds % 60;
         long minutes = seconds % 3600 / 60;
@@ -39,6 +35,7 @@ public class Human {
         long days = seconds / 86400;
         System.out.println("Day " + days + " Hour " + hours + " Minute " + minutes + " Seconds " + sec);
     }
+
 
     public int getPeople() {
         return people++;
@@ -54,7 +51,20 @@ public class Human {
         this.schedule = schedule;
     }
 
+    public Human(String name, String surname, String birthDateAdoptedChild, int iq) throws ParseException {
+        this.name = name;
+        this.surname = surname;
+        this.birthDateAdoptedChild = birthDateAdoptedChild;
+        this.iq = iq;
+    }
 
+    public String getBirthDateAdoptedChild() {
+        return birthDateAdoptedChild;
+    }
+
+    public void setBirthDateAdoptedChild(String birthDateAdoptedChild) {
+        this.birthDateAdoptedChild = birthDateAdoptedChild;
+    }
 
     //конструктор, описывающий имя, фамилию и год рождения
     public Human(String name, String surname, int year) {
@@ -64,12 +74,9 @@ public class Human {
         this.year = year;
     }
 
-
     public Human(String name, String surname, int year, int iq) {
-
         this(name, surname, year);
         this.iq = iq;
-
     }
     //пустой конструктор
     public Human() {}
@@ -96,6 +103,9 @@ public class Human {
 
     public long getYear() {
         return year;
+    }
+    public long getYearInMilisec(){
+        return year * oneYear;
     }
 
     public void setYear(int year) {
@@ -126,9 +136,6 @@ public class Human {
         this.schedule = schedule;
     }
 
-
-
-
         public static int getCountFamily() {
             return countHuman;
         }
@@ -139,7 +146,6 @@ public class Human {
             deleteCount++;
             System.out.println("Удаляемый объектв классе Human в методе finalize(): " + this + " " + deleteCount + " - раз");
         }
-
         enum DayOfWeek {
             MONDAY,
             TUESDAY,
@@ -149,13 +155,12 @@ public class Human {
             SATURDAY,
             SUNDAY
         }
-
         @Override
     public String toString() {
         return "Human{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", year=" + year +
+                ", year=" + (birthDateAdoptedChild !=null ? birthDateAdoptedChild : year) +
                 ", iq=" + iq +
                 ", schedule= " + schedule +
 //                ", mother=" + (mother != null ? mother.getName() + " " + mother.getSurname() : "") +

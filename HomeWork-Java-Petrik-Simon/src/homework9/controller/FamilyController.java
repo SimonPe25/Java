@@ -43,8 +43,8 @@ public class FamilyController {
     public void adoptChild(Family family, Human human){
         familyService.adoptChild(family,human);
     }
-    public void deleteAllChildrenOlderThen(int age){
-       familyService.deleteAllChildrenOlderThen(age);
+    public void deleteAllChildrenOlderThen(int index){
+       familyService.deleteAllChildrenOlderThen(index);
     }
     public void count(){familyService.count();}
     public void getFamilyById(int index){
@@ -53,9 +53,9 @@ public class FamilyController {
     public void getPets(int index){
         familyService.getPets(index);
     }
-//    public void addPet(int index, Pet pet){
-//       familyService.addPet(index, pet);
-//        }
+    public void addPet(int index, Pet pet){
+       familyService.addPet(index, pet);
+        }
 
 
 

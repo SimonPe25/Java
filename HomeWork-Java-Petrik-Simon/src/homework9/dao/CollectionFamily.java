@@ -1,19 +1,33 @@
 package homework9.dao;
 
 import homework9.Family;
+import homework9.Pet;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 
 public class CollectionFamily  implements FamilyDao {
 
-    private List<Family> familyList = new ArrayList<>();
+    private List<Family> familyList;
 
     public List<Family> getFamilyList() {
-        return Collections.unmodifiableList(familyList);
+        return familyList;
     }
+    public void saveAll(List<Family> list){
+        list.forEach(f->{
+            this.saveFamily(f);
+        });
+    }
+    public void addNewPet(Pet pet){
+        for (int i = 0; i < familyList.size(); i++) {
+      Set<String> addP = familyList.get(i).getPet();
+       addP.add(String.valueOf(pet));
+            System.out.println("Новый массив с животными - " + addP);
+            return;
+        }
+    }
+
     public CollectionFamily(List<Family> familyList) {
         this.familyList = familyList;
     }
@@ -24,7 +38,6 @@ public class CollectionFamily  implements FamilyDao {
             System.out.println( i+": " + familyList.get(i));
         }
     }
-
     @Override
     public void getFamilyByIndex(int index) {
             if (index >= familyList.size()){
@@ -42,11 +55,6 @@ public class CollectionFamily  implements FamilyDao {
         }
         System.out.println(isDelete(index));
         familyList.remove(index);
-    }
-    public void saveAll(List<Family> list){
-        list.forEach(f->{
-            this.saveFamily(f);
-        });
     }
     public boolean isDelete (int index)
     {

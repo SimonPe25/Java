@@ -23,11 +23,6 @@ public class test {
         map2.put(3, "3");
         map2.put(1, "1");
         System.out.println("Treemap2 - " + map2);
-//        ListIterator<String> iterator = java.util.List.of("1").listIterator();
-//        iterator.previous();
-      //  new Outer("inner").new inner().spy();
-      //  Box<Integer, Trestr.Outer.Inner, InstantEx> intBox = new Box<>();
-
         List<Integer> raw = new ArrayList<>();
         raw.add(3);
         raw.add(2);
@@ -38,19 +33,6 @@ public class test {
         System.out.println(raw );
 
 
-
-    }
-   //static record Outer (String secret) {
-    //    class inner{
-       //     public String spy(){
-         //       return secret;
-          //  }
-     //   }
-   // }
-
-    int val = 2;
-    class Box<T, V, P>{
-        T val;
 
     }
 

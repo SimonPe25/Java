@@ -7,7 +7,7 @@ public class Family {
     private Human mother;
     private Human father;
     private Human[] childrens = new Human[0];
-    private Set<String> pet;
+    private Set<String> pet = new HashSet<>();
     static int myFamily = 0;
     public static int countFamily = 0;
     static int countHum = 0;
@@ -15,15 +15,16 @@ public class Family {
     public Human[] getChildrens() {
         return childrens;
     }
-    public void addNewPet(Pet pet){
 
-    }
+
+
 //    public void addChildren(Human children){
 //        Human[] humans = Arrays.copyOf(childrens, childrens.length + 1);
 //        children.setFamily(this);
 //        humans[childrens.length] = children;
 //        childrens = humans;
 //    }
+
     public Family(Human mother, Human father) {
         countFamily++;
         this.mother = mother;
@@ -62,10 +63,6 @@ public class Family {
         System.arraycopy(childrens, index + 1, humans, index, childrens.length - index-1);
         childrens = humans;
     }
-//    public  void getFamily(){
-//        return getMother;
-//    }
-
 
     public Human getMother() {
         return mother;

@@ -4,6 +4,7 @@ import homework9.controller.FamilyController;
 import homework9.dao.CollectionFamily;
 import homework9.service.FamilyService;
 
+import java.text.ParseException;
 import java.util.*;
 
 import static homework9.Human.DayOfWeek.*;
@@ -11,7 +12,7 @@ import static homework9.Human.countHuman;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Pet.Species dog = Pet.Species.DOG;
         String sunday = SUNDAY.name();
         String monday = MONDAY.name();
@@ -140,8 +141,6 @@ public class Main {
         System.out.println("matherFamily2 - " + matherFamily2);
         System.out.println("fatherFamily2 - " + fatherFamily2);
 
-
-
         //SEt PET
         Set<String> petGroup = new HashSet<>();
         Pet tuzik = new Dog("Tuzik", 10, 45,habitsDog);
@@ -193,24 +192,23 @@ public class Main {
         familyController.displayAllFamilies();
         familyController.bornChild(popov, "PETROVICH", "KAROLINA");
         familyController.displayAllFamilies();
-        Human adoptedChild = new Human("Donald", "Tramp", 15);
-        familyController.adoptChild(popov, adoptedChild);
         familyController.displayAllFamilies();
-       // familyController.deleteAllChildrenOlderThen(5);
         familyController.count();
         familyController.getFamilyById(2);
         familyController.getPets(1);
-        Pet shrark = new Fish("BUBA",3,25, habitsFish);
-        //familyController.addPet(0, shrark);
-        mother.getTime();
-        mother.describeAge();
+        familyController.deleteAllChildrenOlderThen(17);
         familyController.displayAllFamilies();
-        familyService.getFamiliesBiggerThan(0);
-        familyController.deleteAllChildrenOlderThen(20);
 
-       // familyController.deleteAllChildrenOlderThen(10);
-
-
+        familyController.addPet(5, nemo);
+        familyController.displayAllFamilies();
+        familyController.addPet(5, tuzik);
+        familyController.displayAllFamilies();
+        System.out.println(mother.getYearInMilisec());
+        mother.describeAge();
+        father.describeAge();
+        Human adoptedChild = new Human("Donald", "Tramp","12/12/2020",89);
+        System.out.println(adoptedChild);
+        familyController.adoptChild(popov, adoptedChild);
 
     }
 
