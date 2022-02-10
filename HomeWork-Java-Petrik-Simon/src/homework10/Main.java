@@ -203,20 +203,26 @@ public class Main {
         familyController.displayAllFamilies();
         familyController.addPet(5, tuzik);
         familyController.displayAllFamilies();
-        System.out.println(mother.getYearInMilisec());
+      //  System.out.println(mother.getYearInMilisec());
         mother.describeAge();
         father.describeAge();
         Human adoptedChild = new Human("Donald", "Tramp","12/12/2020",89);
-        System.out.println(adoptedChild);
+     //   System.out.println(adoptedChild);
         familyController.adoptChild(popov, adoptedChild);
-        System.out.println("----------display family-----------");
-        familyController.displayAllFamilies();
-        familyController.getFamiliesBiggerThan(allFamaly, 3);
-        familyController.getFamiliesLessThan(allFamaly,3);
-        familyController.countFamiliesWithMemberNumber(allFamaly,4);
-        familyController.deleteAllChildrenOlderThen(25);
+//        System.out.println("----------display family-----------");
+//        familyController.displayAllFamilies();
+//        familyController.getFamiliesBiggerThan(allFamaly, 3);
+//        familyController.getFamiliesLessThan(allFamaly,3);
+//        familyController.countFamiliesWithMemberNumber(allFamaly,4);
+//        familyController.deleteAllChildrenOlderThen(25);
 
 
+
+     getListComand();
+    }
+
+    private static void getListComand() {
+        System.out.println("---------------------------------+++++++++++++++++");
     }
 
 }
