@@ -38,7 +38,7 @@ public class FamilyService {
     public void writeFile() throws IOException {
       collectionFamily.writeFile();
     }
-    public void loadData() throws IOException {
+    public void loadData() throws IOException, ClassNotFoundException {
         collectionFamily.loadData();
     }
 

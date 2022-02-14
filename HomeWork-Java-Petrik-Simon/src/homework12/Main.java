@@ -8,7 +8,6 @@ import java.util.*;
 
 public class Main {
 
-
     public static void main(String[] args) throws ParseException, IOException {
 
           List<Family> family = new ArrayList<>();
@@ -26,7 +25,9 @@ public class Main {
         while (true) {
             System.out.println("Please enter number only");
             int num = Integer.parseInt(in.nextLine());
+
             try {
+
                 if (num == 1){
                    StartList start = new StartList();
                    start.startList();
@@ -158,6 +159,8 @@ public class Main {
             } catch (NumberFormatException e) {
                 System.err.println("\n" + "Wrong string format!");
                 System.out.println(num + " please, try again only numbers.");
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
         }
     }

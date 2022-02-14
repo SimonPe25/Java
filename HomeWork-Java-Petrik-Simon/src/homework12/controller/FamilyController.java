@@ -78,7 +78,7 @@ public class FamilyController {
     public void  writeFile() throws IOException {
      familyService.writeFile();
     }
-    public void loadData() throws IOException {
+    public void loadData() throws IOException, ClassNotFoundException {
         familyService.loadData();
     }
     public  void setFamily(List<Family> listFamily){

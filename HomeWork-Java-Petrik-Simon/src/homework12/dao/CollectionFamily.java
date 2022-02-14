@@ -38,6 +38,7 @@ public class CollectionFamily  implements FamilyDao {
     public void loadData() throws IOException {
         FileInputStream fis = new FileInputStream("Femaly.txt");
         ObjectInputStream oin = new ObjectInputStream(fis);
+
         while (true) {
             try {
                 familyList.add((Family) oin.readObject());
